@@ -7,17 +7,18 @@ if(!isset($_SESSION['admin'])){
     exit();
 }
 
-$result = $conn->query("SELECT * FROM blood_stock ORDER BY blood_group");
+$result = $conn->query("SELECT * FROM contact_messages ORDER BY id DESC");
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Blood Stock Management</title>
+<title>Contact Messages</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -34,23 +35,25 @@ body{
     background:#1e293b;
     border:none;
     border-radius:18px;
-    overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,.4);
+    overflow:hidden;
 }
+
+/* Header */
 
 .card-header{
     background:linear-gradient(90deg,#dc3545,#b91c1c);
     color:#fff;
-    text-align:center;
     font-size:28px;
     font-weight:bold;
+    text-align:center;
     padding:18px;
 }
 
 /* Table */
 
 .table{
-    color:white;
+    color:#fff;
     margin-bottom:0;
 }
 
@@ -59,8 +62,8 @@ body{
 }
 
 .table thead th{
+    color:#fff;
     text-align:center;
-    color:white;
     vertical-align:middle;
 }
 
@@ -74,33 +77,29 @@ body{
     transition:.3s;
 }
 
-.badge{
-    padding:8px 12px;
-    font-size:14px;
-    border-radius:8px;
-}
-
 /* Buttons */
 
-.btn-success{
-    border-radius:8px;
-    padding:6px 16px;
-    font-weight:600;
+.btn-primary{
+    background:#2563eb;
+    border:none;
 }
 
-.btn-success:hover{
-    transform:translateY(-2px);
+.btn-primary:hover{
+    background:#1d4ed8;
+}
+
+.btn-danger:hover{
+    background:#b91c1c;
 }
 
 .btn-back{
-    display:inline-block;
     background:#2563eb;
     color:white;
-    text-decoration:none;
     padding:12px 28px;
     border-radius:10px;
+    text-decoration:none;
+    display:inline-block;
     transition:.3s;
-    font-weight:600;
 }
 
 .btn-back:hover{
@@ -109,8 +108,8 @@ body{
     transform:translateY(-3px);
 }
 
-.table tbody tr.low-stock{
-    background:#7f1d1d;
+td{
+    word-break:break-word;
 }
 
 /* Footer */
@@ -128,14 +127,12 @@ footer{
 
 <body>
 
-
-
 <div class="container py-5">
 
 <div class="card">
 
 <div class="card-header">
-🩸 Blood Stock Management
+📩 Contact Messages
 </div>
 
 <div class="card-body">
@@ -148,8 +145,12 @@ footer{
 
 <tr>
 <th>S.NO</th>
-<th>Blood Group</th>
-<th>Available Units</th>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Subject</th>
+<th>Message</th>
+<th>Date</th>
 <th>Action</th>
 </tr>
 
@@ -161,41 +162,43 @@ footer{
 $sn = 1;
 
 while($row = $result->fetch_assoc()){
-    ?>
-    <tr class="<?php echo ($row['units']<=5) ? 'low-stock' : ''; ?>">
+?>
 
 <tr>
 
 <td><?php echo $sn++; ?></td>
 
-<td>
-<strong><?php echo $row['blood_group']; ?></strong>
+<td><?php echo $row['id']; ?></td>
+
+<td><?php echo $row['fullname']; ?></td>
+
+<td><?php echo $row['email']; ?></td>
+
+<td><?php echo $row['subject']; ?></td>
+
+<td style="max-width:250px;">
+<?php echo $row['message']; ?>
 </td>
 
-<td>
-
-<?php
-
-if($row['units'] <= 5){
-
-echo "<span class='badge bg-danger'>🩸 ".$row['units']." Units</span>";
-
-}
-else{
-
-echo "<span class='badge bg-success'>✅ ".$row['units']." Units</span>";
-
-}
-
-?>
-
-</td>
+<td><?php echo $row['created_at']; ?></td>
 
 <td>
 
-<a href="update_stock.php?id=<?php echo $row['id']; ?>"
-class="btn btn-success btn-sm">
-✏ Update
+<a href="reply_message.php?id=<?php echo $row['id']; ?>"
+class="btn btn-primary btn-sm mb-2 w-100">
+➤ Reply
+</a>
+
+<a href="mailto:<?php echo $row['email']; ?>">
+<?php echo $row['email']; ?>
+</a>
+
+echo date("d M Y h:i A", strtotime($row['created_at']));
+
+<a href="delete_message.php?id=<?php echo $row['id']; ?>"
+class="btn btn-danger btn-sm w-100"
+onclick="return confirm('Delete this message?')">
+🗑 Delete
 </a>
 
 </td>
