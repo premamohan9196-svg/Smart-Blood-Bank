@@ -1,0 +1,294 @@
+/* ==========================================
+   SMART BLOOD CHATBOT
+========================================== */
+
+/* Floating Chat Button */
+
+.chat-icon{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg,#A61E2E,#D42F3F);
+
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    cursor: pointer;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+
+    transition: all .3s ease;
+
+    z-index: 9999;
+
+    animation: pulse 2s infinite;
+}
+
+.chat-icon:hover{
+    transform: scale(1.08);
+}
+
+/* Pulse Animation */
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+50%{
+transform:scale(1.08);
+box-shadow:0 15px 40px rgba(220,53,69,.5);
+}
+
+100%{
+transform:scale(1);
+box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+}
+
+/* ==========================================
+   Chat Window
+========================================== */
+
+.chat-box{
+
+    position:fixed;
+
+    bottom:100px;
+
+    right:25px;
+
+    width:350px;
+
+    height:500px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:none;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.30);
+
+    z-index:9999;
+
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.chat-header{
+
+    background:linear-gradient(135deg,#A61E2E,#D42F3F);
+
+    color:#fff;
+
+    padding:16px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.chat-header span{
+
+    cursor:pointer;
+
+    font-size:24px;
+
+}
+
+/* ==========================================
+   Body
+========================================== */
+
+#chatBody{
+
+    height:360px;
+
+    overflow-y:auto;
+
+    background:#f8f9fa;
+
+    padding:15px;
+
+}
+
+/* Scrollbar */
+
+#chatBody::-webkit-scrollbar{
+
+width:6px;
+
+}
+
+#chatBody::-webkit-scrollbar-thumb{
+
+background:#ccc;
+
+border-radius:20px;
+
+}
+
+/* ==========================================
+   Messages
+========================================== */
+
+.bot-message{
+
+    background:#f1f1f1;
+
+    color:#333;
+
+    padding:12px 15px;
+
+    border-radius:15px;
+
+    margin-bottom:12px;
+
+    max-width:85%;
+
+    line-height:1.6;
+
+}
+
+.user-message{
+
+    background:#dc3545;
+
+    color:#fff;
+
+    padding:12px 15px;
+
+    border-radius:15px;
+
+    margin-bottom:12px;
+
+    margin-left:auto;
+
+    max-width:85%;
+
+    text-align:right;
+
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.chat-footer{
+
+    display:flex;
+
+    padding:12px;
+
+    border-top:1px solid #ddd;
+
+    background:#fff;
+
+}
+
+.chat-footer input{
+
+    flex:1;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+.chat-footer input:focus{
+
+border-color:#dc3545;
+
+}
+
+.chat-footer button{
+
+    margin-left:10px;
+
+    border:none;
+
+    background:#dc3545;
+
+    color:#fff;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.chat-footer button:hover{
+
+background:#b71c2b;
+
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media(max-width:768px){
+
+.chat-box{
+
+width:95%;
+
+height:75vh;
+
+right:2.5%;
+
+bottom:90px;
+
+}
+
+.chat-icon{
+
+width:60px;
+
+height:60px;
+
+font-size:28px;
+
+right:18px;
+
+bottom:18px;
+
+}
+
+}

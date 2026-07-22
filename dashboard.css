@@ -1,0 +1,700 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:
+    linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),
+    url("assets/images/blood-bg.jpg");
+
+    background-size:cover;
+    background-attachment:fixed;
+    min-height:100vh;
+    color:#222;
+}
+
+/* ==========================
+   GLASS EFFECT
+========================== */
+
+.glass{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+/* ==========================
+   TOPBAR
+========================== */
+
+.topbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    padding:15px 0;
+
+    background:rgba(165,28,48,.88);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    color:#fff;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.profile-img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #fff;
+
+    transition:.4s;
+
+}
+
+.profile-img:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================
+   WELCOME CARD
+========================== */
+
+.welcome-card{
+
+    background:linear-gradient(135deg,#c1121f,#780000);
+
+    color:#fff;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    box-shadow:0 25px 45px rgba(193,18,31,.25);
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.welcome-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-80px;
+
+    right:-80px;
+
+}
+
+.welcome-card h2{
+
+    font-weight:700;
+
+    font-size:38px;
+
+}
+
+.welcome-card p{
+
+    opacity:.95;
+
+    margin-top:10px;
+
+}
+
+.welcome-img{
+
+    width:170px;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid rgba(255,255,255,.6);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+/* ==========================
+   PROFILE INFO CARD
+========================== */
+
+.info-card{
+
+    background:rgba(255,255,255,.22);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:22px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.info-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(193,18,31,.25);
+
+}
+
+.icon{
+
+    font-size:42px;
+
+    color:#c1121f;
+
+    margin-bottom:15px;
+
+}
+
+.info-card h6{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.info-card p{
+
+    color:#666;
+
+    margin:0;
+
+}
+
+/* ==========================
+   ACTION CARDS
+========================== */
+
+.action-card{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#222;
+
+    background:rgba(255,255,255,.22);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    transition:.4s;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.action-card:hover{
+
+    transform:translateY(-12px);
+
+    background:#c1121f;
+
+    color:#fff;
+
+}
+
+.action-card i{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+    display:block;
+
+}
+
+.action-card h4{
+
+    font-weight:700;
+
+}
+
+/* ==========================
+   STATISTICS CARD
+========================== */
+
+.count-card{
+
+    background:linear-gradient(135deg,#c1121f,#780000);
+
+    color:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:0 18px 35px rgba(193,18,31,.25);
+
+}
+
+.count-card:hover{
+
+    transform:scale(1.06);
+
+}
+
+.count-card h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn-danger{
+
+    border-radius:40px;
+
+    padding:10px 28px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-danger:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.btn-outline-dark{
+
+    border-radius:40px;
+
+    padding:10px 28px;
+
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.card{
+
+    border:none;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    margin-top:60px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#777;
+
+}
+
+/* ==========================
+   ANIMATION
+========================== */
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+.welcome-card{
+
+padding:30px;
+
+text-align:center;
+
+}
+
+.welcome-img{
+
+margin-top:30px;
+
+width:140px;
+
+height:140px;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.topbar .container{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.profile-img{
+
+width:50px;
+
+height:50px;
+
+}
+
+.welcome-card h2{
+
+font-size:28px;
+
+}
+
+.action-card{
+
+padding:25px;
+
+}
+
+.count-card{
+
+margin-bottom:15px;
+
+}
+
+}
+
+
+/* ==========================
+   SMOOTH HOVER EFFECTS
+========================== */
+
+/* All cards */
+.info-card,
+.action-card,
+.count-card,
+.welcome-card,
+.card{
+    transition:all .35s ease;
+}
+
+/* Profile Info Cards */
+.info-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(193,18,31,.25);
+}
+
+/* Action Cards */
+.action-card:hover{
+    transform:translateY(-12px) scale(1.03);
+    background:linear-gradient(135deg,#c1121f,#780000);
+    color:#fff;
+    text-decoration:none;
+    box-shadow:0 25px 50px rgba(193,18,31,.35);
+}
+
+.action-card:hover i{
+    transform:scale(1.2) rotate(8deg);
+}
+
+.action-card i{
+    transition:.4s;
+}
+
+/* Statistics Cards */
+.count-card:hover{
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:0 20px 40px rgba(193,18,31,.35);
+}
+
+/* Welcome Card */
+.welcome-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 25px 55px rgba(193,18,31,.35);
+}
+
+/* Profile Image */
+.profile-img{
+    transition:.4s;
+}
+
+.profile-img:hover{
+    transform:scale(1.12) rotate(5deg);
+    box-shadow:0 0 20px rgba(255,255,255,.6);
+}
+
+/* Welcome Image */
+.welcome-img{
+    transition:.4s;
+}
+
+.welcome-img:hover{
+    transform:scale(1.08);
+}
+
+/* Buttons */
+.btn{
+    transition:.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+/* Logout Button */
+.btn-danger:hover{
+    background:#a50f1d;
+}
+
+/* Glass Cards */
+.glass:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+/* Recent Activity List */
+.list-group-item{
+    transition:.3s;
+}
+
+.list-group-item:hover{
+    background:#fff5f5;
+    padding-left:25px;
+    color:#c1121f;
+}
+
+/* Dashboard Logo */
+.logo{
+    transition:.3s;
+    cursor:pointer;
+}
+
+.logo:hover{
+    letter-spacing:1px;
+    transform:scale(1.03);
+}
+
+/* Navbar Links (if used) */
+.nav-link{
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#FFD166 !important;
+}
+
+/* ==========================
+   PREMIUM CARD HOVER EFFECT
+========================== */
+
+.info-card,
+.action-card,
+.count-card,
+.welcome-card{
+
+    transition:all .35s ease;
+
+    cursor:pointer;
+
+}
+
+/* Lift Up Animation */
+
+.info-card:hover,
+.action-card:hover,
+.count-card:hover,
+.welcome-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 45px rgba(193,18,31,.30);
+
+}
+
+/* Premium Scale */
+
+.action-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+}
+
+.count-card:hover{
+
+    transform:translateY(-10px) scale(1.05);
+
+}
+
+.welcome-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ==========================
+   RED GLOW SHADOW EFFECT
+========================== */
+
+/* Info Cards */
+.info-card:hover{
+
+    box-shadow:
+        0 0 15px rgba(220,53,69,.35),
+        0 0 30px rgba(220,53,69,.25),
+        0 15px 35px rgba(0,0,0,.18);
+
+}
+
+/* Action Cards */
+.action-card:hover{
+
+    box-shadow:
+        0 0 20px rgba(220,53,69,.45),
+        0 0 40px rgba(220,53,69,.30),
+        0 20px 45px rgba(0,0,0,.25);
+
+}
+
+/* Statistics Cards */
+.count-card:hover{
+
+    box-shadow:
+        0 0 20px rgba(193,18,31,.50),
+        0 0 45px rgba(193,18,31,.35),
+        0 25px 50px rgba(0,0,0,.25);
+
+}
+
+/* Welcome Card */
+.welcome-card:hover{
+
+    box-shadow:
+        0 0 25px rgba(220,53,69,.45),
+        0 0 50px rgba(220,53,69,.30),
+        0 25px 60px rgba(0,0,0,.25);
+
+}
+
+/* Profile Image Glow */
+.profile-img:hover{
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,.6),
+        0 0 30px rgba(220,53,69,.5);
+
+}
+
+/* Buttons */
+.btn-danger:hover{
+
+    box-shadow:
+        0 0 15px rgba(220,53,69,.45),
+        0 0 30px rgba(220,53,69,.30);
+
+}
